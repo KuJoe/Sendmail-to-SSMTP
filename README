@@ -1,0 +1,16 @@
+Sendmail to SSMTP (MIT License)
+Version 1.0 by KuJoe (JMD.cc)
+	
+//Requirements:
+NONE
+
+//Installation:
+1) Upload or copy/paste the contents of setup.sh to your server.
+2) Edit setup.sh to fit your needs:
+	2a) If you are running Debian or Ubuntu, change the script to use apt-get instead of yum.
+	2b) Change "mydomain.com", "user@mydomain.com", and "API_KEY_FROM_MANDRILL" to your API/Authentication settings.
+	2c) Replace "smtp.mandrillapp.com" with "smtp.sendgrid.net" to use SendGrid, you can specify any other SMTP server also.
+	2d) Change my@email.com to your own e-mail address to receive the test e-mail.
+3) Run the script (sh setup.sh) on your server and check the test e-mail for confirmation. Once you get the test e-mail, feel free to delete setup.sh since you should never have to run it again.
+
+
