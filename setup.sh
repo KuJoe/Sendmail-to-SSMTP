@@ -1,9 +1,15 @@
 #!/bin/bash
 # https://github.com/KuJoe/Sendmail-to-SSMTP
 
-# If you're using Debian/Ubuntu change yum to apt-get
-yum remove sendmail mailx nail bsd-mailx heirloom-mailx -y
-yum install mailx ssmtp -y
+# !!!!IMPORTANT!!!! One of the following sets needs to be uncommented for this script to work.
+
+# Uncomment these two lines if you are running CentOS/Fedora/RHEL based distros.
+#yum remove sendmail mailx nail bsd-mailx heirloom-mailx -y
+#yum install mailx ssmtp -y
+
+# Uncomment these two lines if you are running Debian/Ubuntu based distros.
+#apt-get remove sendmail mailx nail bsd-mailx heirloom-mailx -y
+#apt-get install heirloom-mailx ssmtp -y
 
 # Remove sendmail and symlink to ssmtp
 rm -rf /usr/sbin/sendmail
