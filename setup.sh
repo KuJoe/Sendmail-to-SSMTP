@@ -26,7 +26,7 @@ echo "AuthUser=user@mydomain.com" >> /etc/ssmtp/ssmtp.conf
 echo "AuthPass=API_KEY_FROM_MANDRILL" >> /etc/ssmtp/ssmtp.conf
 echo "FromLineOverride=YES" >> /etc/ssmtp/ssmtp.conf
 echo "TLS_CA_File=/etc/pki/tls/certs/ca-bundle.crt" >> /etc/ssmtp/ssmtp.conf
-echo "" > revaliases
+echo "" > /etc/ssmtp/revaliases
 
 # Sends you a test e-mail to make sure things are working correctly, check the header and make sure it came from Mandrill.
 # Change my@email.com

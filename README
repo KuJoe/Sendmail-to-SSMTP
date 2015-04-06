@@ -1,5 +1,7 @@
 Sendmail to SSMTP (MIT License)
-Version 1.0 by KuJoe (JMD.cc)
+Version 1.1 by KuJoe (JMD.cc)
+
+1.1 - Fixed directory for revaliases
 	
 //Requirements:
 NONE
