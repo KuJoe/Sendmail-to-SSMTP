@@ -28,6 +28,20 @@ echo "FromLineOverride=YES" >> /etc/ssmtp/ssmtp.conf
 echo "TLS_CA_File=/etc/pki/tls/certs/ca-bundle.crt" >> /etc/ssmtp/ssmtp.conf
 echo "" > /etc/ssmtp/revaliases
 
+# Uncomment these lines if you're running VestaCP with the default firewall (otherwise the firewall will block ssmtp)
+#echo "/sbin/iptables -A OUTPUT -p udp --dport 587 -m state --state NEW,ESTABLISHED -j ACCEPT" >> /usr/local/vesta/data/firewall/custom.sh
+#echo "/sbin/iptables -A INPUT  -p udp --sport 587 -m state --state ESTABLISHED     -j ACCEPT" >> /usr/local/vesta/data/firewall/custom.sh
+#echo "/sbin/iptables -A OUTPUT -p tcp --dport 587 -m state --state NEW,ESTABLISHED -j ACCEPT" >> /usr/local/vesta/data/firewall/custom.sh
+#echo "/sbin/iptables -A INPUT  -p tcp --sport 587 -m state --state ESTABLISHED     -j ACCEPT" >> /usr/local/vesta/data/firewall/custom.sh
+#chmod 0755 /usr/local/vesta/data/firewall/custom.sh
+#/usr/local/vesta/bin/v-update-firewall
+
+# Uncomment these lines if you are not running VestaCP and you receive an error like "send-mail: Cannot open smtp.host.com:587", you'll need to save the iptables rules also but this is different based on your distro so you can do that yourself.
+#/sbin/iptables -A OUTPUT -p udp --dport 587 -m state --state NEW,ESTABLISHED -j ACCEPT
+#/sbin/iptables -A INPUT  -p udp --sport 587 -m state --state ESTABLISHED     -j ACCEPT
+#/sbin/iptables -A OUTPUT -p tcp --dport 587 -m state --state NEW,ESTABLISHED -j ACCEPT
+#/sbin/iptables -A INPUT  -p tcp --sport 587 -m state --state ESTABLISHED     -j ACCEPT
+
 # Sends you a test e-mail to make sure things are working correctly, check the header and make sure it came from Mandrill.
 # Change my@email.com
 uptime | mail -s "MAIL TEST" my@email.com

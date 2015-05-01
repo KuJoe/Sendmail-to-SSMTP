@@ -1,7 +1,8 @@
 Sendmail to SSMTP (MIT License)
-Version 1.1 by KuJoe (JMD.cc)
+Version 1.2 by KuJoe (JMD.cc)
 
 1.1 - Fixed directory for revaliases
+1.2 - Add iptables rules to prevent blocking SSMTP from connecting to remote SMTP server 
 	
 //Requirements:
 NONE
@@ -15,4 +16,5 @@ NONE
 	2d) Change my@email.com to your own e-mail address to receive the test e-mail.
 3) Run the script (sh setup.sh) on your server and check the test e-mail for confirmation. Once you get the test e-mail, feel free to delete setup.sh since you should never have to run it again.
 
-
+//NOTE:
+If you are using iptables to lock down your server, please uncomment the appropriate lines so that the firewall rules do not block outbound connections over port 587 (adjust the port number to your specific needs).
